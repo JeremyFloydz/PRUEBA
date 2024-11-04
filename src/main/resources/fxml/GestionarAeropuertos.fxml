@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="1084.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejerciciol.controller.GestionAeropuertos">
+   <children>
+      <Text layoutX="474.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTADO DE AEROPUERTOS">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="795.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre:" />
+      <TextField fx:id="txtfiltrarNom" layoutX="879.0" layoutY="103.0" onKeyReleased="#filtrarAeros" prefWidth="168.0" />
+      <RadioButton fx:id="btnPublicos" layoutX="53.0" layoutY="107.0" mnemonicParsing="false" text="Públicos">
+         <toggleGroup>
+            <ToggleGroup fx:id="grupo" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="btnPrivados" layoutX="156.0" layoutY="107.0" mnemonicParsing="false" text="Privados" toggleGroup="$grupo" />
+      <TableView fx:id="tablaAeros" layoutX="2.0" layoutY="148.0" prefHeight="334.0" prefWidth="1280.0">
+        <columns>
+          <TableColumn fx:id="aeroColID" prefWidth="49.0" text="ID" />
+          <TableColumn fx:id="aeroColNom" prefWidth="223.0" text="Nombre" />
+            <TableColumn fx:id="aeroColPais" prefWidth="90.0" text="País" />
+            <TableColumn fx:id="aeroColCiudad" prefWidth="101.0" text="Ciudad" />
+            <TableColumn fx:id="aeroColCalle" prefWidth="132.0" text="Calle" />
+            <TableColumn fx:id="aeroColNumero" prefWidth="77.0" text="Número" />
+            <TableColumn fx:id="aeroColAnio" prefWidth="67.0" text="Año" />
+            <TableColumn fx:id="aeroColCapacidad" prefWidth="131.0" text="Capacidad" />
+            <TableColumn fx:id="aeroColNsocios" prefWidth="210.0" text="Nº Socios" />
+            <TableColumn fx:id="aeroColFinanciacion" prefWidth="105.0" text="financiacion" />
+            <TableColumn fx:id="aeroColNtrabajadores" prefWidth="105.0" text="Nº Trabajadores" />
+        </columns>
+      </TableView>
+      <MenuBar layoutX="1.0" layoutY="1.0" prefHeight="25.0" prefWidth="1086.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Aeropuertos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#anadirAero" text="Añadir" />
+                  <MenuItem mnemonicParsing="false" onAction="#editarAero" text="Editar" />
+                  <MenuItem mnemonicParsing="false" onAction="#borrarAero" text="Borrar" />
+                  <MenuItem mnemonicParsing="false" onAction="#mostrarAero" text="Mostrar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Aviones">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#anadirAvion" text="Añadir" />
+                  <MenuItem mnemonicParsing="false" onAction="#activacionAvion" text="Activar / desactivar " />
+                  <MenuItem mnemonicParsing="false" onAction="#borrarAvion" text="Borrar" />
+                  <MenuItem mnemonicParsing="false" onAction="#ayuda" text="Ayuda" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
